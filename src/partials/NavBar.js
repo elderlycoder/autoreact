@@ -25,9 +25,9 @@ function NavBar() {
             </Link>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="/contacts">
+            <Link className="nav-link" to="/contacts">
               Контакты
-            </a>
+            </Link>
           </li>
           <li className="nav-item">
             <a className="nav-link" href="/store">
