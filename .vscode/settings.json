@@ -1,3 +1,4 @@
 {
-   "editor.fontFamily": "hack, Consolas, 'Courier New', monospace"
+   "editor.fontFamily": "'Hack',  Consolas, 'Courier New', monospace",
+   "editor.fontSize": 12
 }
