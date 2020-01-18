@@ -6,7 +6,7 @@ import GetContacts from '../services/getContacts'
 //import Table from './Contacts/Table'
 
 export default class Contacts extends Component {
-   GetContacts = new GetContacts() 
+   GetContacts = new GetContacts()
    state = { // перевоначальный state
       contacts: [],
       error: false
@@ -17,11 +17,11 @@ export default class Contacts extends Component {
    }
    // метод для получения всех контактов
    updateContacts(){
-      this.GetContacts.getAllContacts() 
-      .then(this.onContactsLoaded) 
+      this.GetContacts.getAllContacts()
+      .then(this.onContactsLoaded)
       .catch()
    }
-   
+
    onContactsLoaded = (contacts) => {
       this.setState({
          contacts,
@@ -38,11 +38,11 @@ export default class Contacts extends Component {
 
    renderItems(arr) {
       return arr.map(item => {
-        const {name, phone, model, id} = item;
+        const {name, phone, model, _id} = item;
 
         return(
-         <div key={id}>
-         
+         <div key={_id}>
+
          <div>
             {name}
          </div>
@@ -74,6 +74,6 @@ export default class Contacts extends Component {
 //    <AddContact />
 //    <Table/>
 //    </div>
-   
+
 //    )
 // }
