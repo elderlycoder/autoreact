@@ -30,9 +30,9 @@ function NavBar() {
             </Link>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="/store">
+            <Link className="nav-link" to="/store">
               Склад
-            </a>
+            </Link>
           </li>
           <li className="nav-item">
             <a className="nav-link" href="/auth/login#login">
