@@ -1,7 +1,6 @@
 export default class GetContacts {
    constructor(){
       this.__apiBase = 'http://localhost:4000';
-
    }
    getResource = async (url) =>{
       const res = await fetch(`${this.__apiBase}${url}`);
@@ -16,7 +15,7 @@ export default class GetContacts {
    }
 
    getAllContacts = async () => {
-      const contacts = await this.getResource('/contacts/')
+      const contacts = await this.getResource('/contacts')
       return contacts;
    }
 }

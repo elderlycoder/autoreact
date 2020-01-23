@@ -1,24 +1,32 @@
 import React from "react";
+//import GetContacts from "../../services/getContacts";
 
-class TrTable extends React.Component{
+const TrTable = ({name, phone, model, year, vin, descContact, _id}) => {
   
-   render(){
+     //console.log(_id)
+     const urlName = `/contacts/${_id}/edit?allow=true`,
+            urlOrders = `/contacts/{_id}/orders`
       return (
-         <tr className="row-list" id="contact-tr">
-            <td><a href="/contacts/{{id}}/edit?allow=true">name</a></td>
-            <td><a href="/contacts/{{id}}/orders">Заказы</a></td>
-            <td>phone</td>
-            <td>model</td>
-            <td>year</td>
-            <td>vin</td>
-            <td>descContact</td>
-            <td>userId</td>
-            
-        </tr>
-      
+         <>
+            <td><a href={urlName}>{name}</a></td>
+            <td><a href={urlOrders}>Заказы</a></td>
+            <td>{phone}</td>
+            <td>{model}</td>
+            <td>{year}</td>
+            <td>{vin}</td>
+            <td>{descContact}</td>
+            </>
+         
       )
-   }
-
 }
+   
+   // render() {
+   //    const { error, contacts } = this.state;
+  
+   //    const items = this.renderItems(contacts);
+   //    return <div className="left">{items}</div>;
+   //  }
+
+
 
 export default TrTable

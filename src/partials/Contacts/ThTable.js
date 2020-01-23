@@ -12,9 +12,8 @@ class ThTable extends React.Component{
          <th>Год</th>
          <th>VIN</th>
          <th>Примечание</th>
-         <th>userId</th>
-         
-     </tr>
+
+         </tr>
       
       )
    }
