@@ -1,16 +1,35 @@
-import React from "react";
+import React, { Component } from "react";
+import ContactsServices from "../../services/Contacts";
+export default class AddContact extends Component {
+    Contacts = new ContactsServices();
+    state = {
+        // первоначальный state
+        contact: {},
+        error: false
+      };
+    MyRef = React.createRef();
+    AddContact = () => {
+        const contact = {};
+        for (const key of Object.keys(this.refs)) {
+            contact[key] = this.refs[key].value
+        }
 
-const AddContact = () => {
-  return (
-    <div>
-      <h4>Добавить контакт: </h4>
-      
-      <form action="contacts" method="post">
-      <div className="form-row">
-         <input type="text" name="name" placeholder="Имя" />
-         <input type="text" name="phone" placeholder="Телефон" />
-         <input type="text" id="model" name="model" placeholder="Марка и модель" /> 
-         <label> Год: <select id="year" name="year">
+        this.Contacts.addContact(contact)
+          .then(this.onContactsLoaded)
+          .catch();
+      }
+
+
+    render() {
+        return (
+            <div>
+                <h4>Добавить контакт: </h4>
+
+                <div className="form-row">
+                    <input type="text" placeholder="Имя" ref="name"/>
+                    <input type="text" name="phone" placeholder="Телефон" ref="phone" />
+                    <input type="text" id="model" name="model" placeholder="Марка и модель" ref="car"/>
+                    <label> Год: <select id="year" name="year" ref = "year">
                         <option value="2019">2019</option>
                         <option value="2018">2018</option>
                         <option value="2017">2017</option>
@@ -28,16 +47,14 @@ const AddContact = () => {
                         <option value="2005">2005</option>
                         <option value="2004">2004</option>
                         <option value="2003">2003</option>
-                     </select>
-            <input type="text" id="vin" name="vin" placeholder="VIN код" />
-            <input type="text" name="descContact" placeholder="Примечание" />
-            <button>Сохранить</button>
-         </label>
-         </div>
-      </form>
-      
-    </div>
-  );
-};
+                    </select>
+                        <input type="text" id="vin" name="vin" placeholder="VIN код" ref="vin" />
+                        <input type="text" name="descContact" placeholder="Примечание" ref="notes"/>
+                        <button onClick={this.AddContact}>Сохранить</button>
+                    </label>
+                </div>
+            </div>
+        );
+    }
+}
 
-export default AddContact;

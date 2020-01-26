@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-import GetContacts from "../services/getContacts";
+import ContactsServices from "../services/Contacts";
 import SearchContact from "./Contacts/SearchContact";
 import AddContact from './Contacts/AddContact'
 //import Contact from './Contacts/Contact'
 import Table from './Contacts/Table'
 
 export default class Contacts extends Component {
-  GetContacts = new GetContacts();
+  Contacts = new ContactsServices();
   state = {
     // первоначальный state
     contacts: [],
@@ -18,7 +18,7 @@ export default class Contacts extends Component {
   }
   // метод для получения всех контактов
   updateContacts() {
-    this.GetContacts.getAllContacts()
+    this.Contacts.getAllContacts()
       .then(this.onContactsLoaded)
       .catch();
   }
