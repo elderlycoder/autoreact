@@ -36,6 +36,13 @@ export default class Contacts extends Component {
     });
   };
 
+  updateStateContactsFromForm(contacts) {
+    this.setState({
+      contacts,
+      error: false
+    });
+  }
+
   // renderItems(arr) {
   //   return arr.map(item => {
   //     const { name, phone, model, _id } = item;
@@ -53,10 +60,10 @@ export default class Contacts extends Component {
 
   render() {
     const { error, contacts } = this.state;
-    return(<div>
-    <SearchContact />
-    <AddContact />
-    <Table contacts={contacts} />
+    return (<div>
+      <SearchContact />
+      <AddContact updateContactsState={this.updateStateContactsFromForm.bind(this)} contacts={this.state.contacts} />
+      <Table contacts={contacts} />
     </div>)
   }
 }

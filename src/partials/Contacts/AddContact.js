@@ -7,16 +7,30 @@ export default class AddContact extends Component {
         contact: {},
         error: false
       };
-    MyRef = React.createRef();
+
+
+    clearRefs() {
+        for (const key of Object.keys(this.refs)) {
+            if(this.refs[key].tagName !== "SELECT") {
+                this.refs[key].value = '';
+            }
+        }
+    }
+
     AddContact = () => {
         const contact = {};
         for (const key of Object.keys(this.refs)) {
             contact[key] = this.refs[key].value
         }
 
+
         this.Contacts.addContact(contact)
-          .then(this.onContactsLoaded)
-          .catch();
+          .then(contact =>{
+              this.clearRefs();
+              this.props.contacts.push(contact);
+              this.props.updateContactsState(this.props.contacts)
+            })
+          .catch(console.log);
       }
 
 

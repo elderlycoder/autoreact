@@ -3,9 +3,8 @@ import ThTable from "./ThTable";
 import TrTable from "./TrTable";
 
 const Table = ({contacts}) => {
-  console.log(contacts)
   const elements = contacts.map((item) => {
-    return (<tr className="row-list" id="contact-tr" key={item._id}>
+    return (<tr className="row-list" key={item._id}>
       <TrTable {...item} />
     </tr>
     )

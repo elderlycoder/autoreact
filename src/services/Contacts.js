@@ -31,8 +31,12 @@ export default class Contacts {
       return contacts;
    }
    addContact = async (contact) => {
-      const contacts = await this.postData('/api/v1/contacts', contact)
-      return contacts;
+      const response = await this.postData('/api/v1/contacts', contact);
+
+      if (response.status !== 200) {
+         throw Error('Ошибка сохранения контакта', response.body);
+      }
+      return response.json();
    }
 
 }
