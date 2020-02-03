@@ -1,0 +1,48 @@
+.menu-parts {
+   position: absolute;
+   right: 10;
+   width: 100%;
+}
+.row-part li:hover {
+   cursor: pointer;
+   color: #5d56d5
+}
+.pmenuu ul {
+   list-style: none;
+}
+
+ul .pmenuu {
+   list-style: none;
+}
+
+.pmenuu li {
+   margin: 8px;
+   list-style: none;
+}
+
+.pmenuu span {
+   color: green;
+   padding: 5px;
+}
+
+.pmenuu span:hover {
+   padding: 1px 2px 1px 0;
+}
+
+
+.select-grup {
+   position: relative;
+}
+.psubmenuu {
+   position: absolute;
+   background-color: white;
+   width: 100%;
+   right: 100%;
+   top: -9999em;
+   opacity: 0;
+}
+
+.select-grup:hover .psubmenuu {
+   opacity: 1;
+   top: 0;
+}
