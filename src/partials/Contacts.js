@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import GetContacts from "../services/getContacts";
+import GetContacts from "../services/Contacts";
 import SearchContact from "./Contacts/SearchContact";
 import AddContact from './Contacts/AddContact'
 //import Contact from './Contacts/Contact'
