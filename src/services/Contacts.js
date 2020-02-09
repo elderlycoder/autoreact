@@ -15,7 +15,7 @@ export default class GetContacts {
    }
 
    getAllContacts = async () => {
-      const contacts = await this.getResource('/contacts')
+      const contacts = await this.getResource('/api/v1/contacts')
       return contacts;
    }
 }
