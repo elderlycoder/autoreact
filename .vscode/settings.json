@@ -1,3 +1,4 @@
 {
-   "editor.fontFamily": "'JetBrains Mono', Consolas, 'Courier New', monospace"
+   "editor.fontFamily": "'Iosevka', 'JetBrains Mono', Consolas, 'Courier New', monospace",
+   "editor.fontWeight": "400"
 }

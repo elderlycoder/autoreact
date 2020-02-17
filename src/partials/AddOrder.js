@@ -14,41 +14,41 @@ export default class AddOrder extends Component {
   optionId = 100;
   partId = 1;
   state = {
-    partArray: [{
-      partname: 'Деталь',
-      selectside: 'Сторона',
-      selectplace: 'Расположение',
-      countpart: 1,
-      id: 17,
-      optionArray: [{
-        number: 'Номер',
-        manufacturer: '',
-        provider: '',
-        purchaseprice: null,
-        sellingprice: null,
-        id:1      
-      },
-      {
-        number: 'Номер2',
-        manufacturer: '2',
-        provider: '',
-        purchaseprice: null,
-        sellingprice: null,
-        id:2      
-      }
-      ]
-    }]
+    // partArray: [{
+    //   partname: 'Деталь',
+    //   selectside: 'Сторона',
+    //   selectplace: 'Расположение',
+    //   countpart: 1,
+    //   id: 17,
+    //   optionArray: [{
+    //     number: 'Номер',
+    //     manufacturer: '',
+    //     provider: '',
+    //     purchaseprice: null,
+    //     sellingprice: null,
+    //     id:1      
+    //   },
+    //   {
+    //     number: 'Номер2',
+    //     manufacturer: '2',
+    //     provider: '',
+    //     purchaseprice: null,
+    //     sellingprice: null,
+    //     id:2      
+    //   }
+    //   ]
+    // }]
   };
-  createPart(label){
-    return{
-    partname: label,
-    selectside: '',
-    selectplace: '',
-    countpart: 1,
-    optionArray: [],
-    id: this.partId++
-    }
-  }
+  // createPart(label){
+  //   return{
+  //   partname: label,
+  //   selectside: '',
+  //   selectplace: '',
+  //   countpart: 1,
+  //   optionArray: [],
+  //   id: this.partId++
+  //   }
+  // }
   createOption(key){
     return{
       number: '',
@@ -116,7 +116,7 @@ export default class AddOrder extends Component {
             <BtnNewContact />
           </div>
           <ContactResult />
-          <Form parts={this.state.partArray}
+          <Form /*parts={this.state.partArray}*/
                 deletedPart={this.deletedPart}
                 addOption={this.addOption}
                 deletedOption={this.deletedOption} />

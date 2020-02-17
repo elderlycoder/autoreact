@@ -1,13 +1,14 @@
-import React, {Component} from 'react'
+import React, {Component} from 'react';
+import {connect} from 'react-redux';
 
 
-export default class PartOptions extends Component{
+class PartOptions extends Component{
 render(){
    const {number, manufacturer, provider, purchaseprice, sellingprice} = this.props
    return(
       <div>
       <input type="checkbox" name="check" />
-      <input type="text" placeholder={number} name="number" size="15" />
+      <input type="text" placeholder="Номер детали" name="number" size="15" />
       <input type="text" placeholder="Производитель" name="manufacturer" size="15" />
       <input type="text" placeholder="Поставщик" name="provider" size="15" />
       <input type="number" placeholder="Закупка" name="purchaseprice" min="0" max="1000000" step="1" />
@@ -19,3 +20,6 @@ render(){
    )
 }
 }
+
+
+export default connect (null, null)(PartOptions)
